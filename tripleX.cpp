@@ -9,12 +9,13 @@ int main() {
     const int CodeA = 4;
     const int CodeB = 2;
     const int CodeC = 1;
+    int PlayerGuess;
 
-    const int sum = CodeA + CodeB + CodeC;
-    const int product = CodeA * CodeB * CodeC;
+    const int CodeSum = CodeA + CodeB + CodeC;
+    const int CodeProduct = CodeA * CodeB * CodeC;
 
-    std::cout << "- The 3 secret code numbers add to: "<< sum << std::endl;
-    std::cout << "- They multiply together to be: " << product << std::endl;
+    std::cout << "- The 3 secret code numbers add to: "<< CodeSum << std::endl;
+    std::cout << "- They multiply together to be: " << CodeProduct << std::endl;
     
     return 0;
 }
