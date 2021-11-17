@@ -1,1 +1,1 @@
-A game made with the Unreal Engine Udemy course, purely in c++
+A game made with the Unreal Engine Udemy course, purely in C++
