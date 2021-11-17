@@ -9,13 +9,29 @@ int main() {
     const int CodeA = 4;
     const int CodeB = 2;
     const int CodeC = 1;
-    int PlayerGuess;
+    int GuessA, GuessB, GuessC;
+    int GuessSum, GuessProduct;
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
 
     std::cout << "- The 3 secret code numbers add to: "<< CodeSum << std::endl;
     std::cout << "- They multiply together to be: " << CodeProduct << std::endl;
+    std::cout << "What is your guess for the codes?" << std::endl;
+
+    std::cin >> GuessA;
+    std::cin >> GuessB;
+    std::cin >> GuessC;
+
+    GuessSum = GuessA + GuessB + GuessC;
+    GuessProduct = GuessA * GuessB * GuessC;
+
+    std::cout << std::endl;
+    std::cout << "Your guesses were " << GuessA << " " << GuessB << " " << GuessC << "." << std::endl;
+
+    if (GuessProduct == CodeProduct && GuessSum == CodeSum) {
+        std::cout << "You win!" << std::endl;
+    }
     
     return 0;
 }
