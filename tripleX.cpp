@@ -21,7 +21,7 @@ bool PlayGame(int DifficultyLevel) {
 
     std::cout << "- The 3 secret code numbers add to: "<< CodeSum << std::endl;
     std::cout << "- They multiply together to be: " << CodeProduct << std::endl << std::endl;
-    std::cout << "What is your guess for the secret codes?\n";
+    std::cout << "What is your guess for the secret codes? (seperate codes with a space)\n";
 
     std::cin >> GuessA;
     std::cin >> GuessB;
