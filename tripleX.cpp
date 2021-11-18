@@ -1,4 +1,5 @@
-#include <iostream> 
+#include <iostream>
+#include <ctime>
 
 void PrintIntroduction() {
     std::cout << "Welcome to TripleX testing facility.\n";
@@ -41,6 +42,7 @@ bool PlayGame(int DifficultyLevel) {
 }
 
 int main() {
+    srand(time(NULL));
     PrintIntroduction();
 
     int DifficultyLevel = 1;
