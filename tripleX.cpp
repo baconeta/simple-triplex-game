@@ -5,14 +5,13 @@ void PrintIntroduction() {
     std::cout << "In order to be granted access to the tools in this facility you must first pass a test. Get ready.\n\n";
 }
 
-void PlayGame() {
-    PrintIntroduction();
+bool PlayGame(int DifficultyLevel) {
+    std::cout << "You are in room "<< DifficultyLevel << ".\n";
 
     const int CodeA = 4;
     const int CodeB = 2;
     const int CodeC = 1;
 
-    int DifficultyLevel = 1;
     int GuessA, GuessB, GuessC;
     int GuessSum, GuessProduct;
 
@@ -34,15 +33,27 @@ void PlayGame() {
 
     if (GuessProduct == CodeProduct && GuessSum == CodeSum) {
         std::cout << "Code for level " << DifficultyLevel  << " accepted. Access granted to next level.\n";
+        return true;
     } else {
         std::cout << "Incorrect guess. You failed, and have been kicked out of the facility.\n";
+        return false;
     }
 }
 
 int main() {
+    PrintIntroduction();
+    bool bLevelComplete = true;
+    int DifficultyLevel = 1;
     while (true) {
-        PlayGame();
+        bLevelComplete = PlayGame(DifficultyLevel);
+        std::cin.clear();
+        std::cin.ignore();
+        if (bLevelComplete)
+        {
+            ++DifficultyLevel;
+        }
+        
     }
-    
+
     return 0;
 }
