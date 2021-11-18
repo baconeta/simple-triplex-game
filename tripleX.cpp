@@ -1,14 +1,10 @@
 #include <iostream> 
 
-int main() {
-    // output introduction messages to player
-    std::cout << "Welcome to TripleX testing facility." << std::endl;
-    std::cout << "In order to be granted access to the tools in this facility you must first pass a test. Get ready." << std::endl;
-    std::cout << std::endl;
-
+void PlayGame() {
     const int CodeA = 4;
     const int CodeB = 2;
     const int CodeC = 1;
+    int DifficultyLevel = 1;
     int GuessA, GuessB, GuessC;
     int GuessSum, GuessProduct;
 
@@ -16,8 +12,8 @@ int main() {
     const int CodeProduct = CodeA * CodeB * CodeC;
 
     std::cout << "- The 3 secret code numbers add to: "<< CodeSum << std::endl;
-    std::cout << "- They multiply together to be: " << CodeProduct << std::endl;
-    std::cout << "What is your guess for the codes?" << std::endl;
+    std::cout << "- They multiply together to be: " << CodeProduct << std::endl << std::endl;
+    std::cout << "What is your guess for the 3 codes?\n";
 
     std::cin >> GuessA;
     std::cin >> GuessB;
@@ -29,10 +25,17 @@ int main() {
     std::cout << std::endl;
 
     if (GuessProduct == CodeProduct && GuessSum == CodeSum) {
-        std::cout << "You win!" << std::endl;
-    } else {
-        std::cout << "Incorrect guess. You failed, and have been kicked out of the facility." << std::endl;
+        std::cout << "Code for level " << DifficultyLevel  << " accepted. Access granted to next level.\n";
+    } 
+    else {
+        std::cout << "Incorrect guess. You failed, and have been kicked out of the facility.\n";
     }
-    
+}
+
+int main() {
+    // output introduction messages to player
+    std::cout << "Welcome to TripleX testing facility.\n";
+    std::cout << "In order to be granted access to the tools in this facility you must first pass a test. Get ready.\n\n";
+
     return 0;
 }
