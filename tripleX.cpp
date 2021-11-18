@@ -27,10 +27,11 @@ int main() {
     GuessProduct = GuessA * GuessB * GuessC;
 
     std::cout << std::endl;
-    std::cout << "Your guesses were " << GuessA << " " << GuessB << " " << GuessC << "." << std::endl;
 
     if (GuessProduct == CodeProduct && GuessSum == CodeSum) {
         std::cout << "You win!" << std::endl;
+    } else {
+        std::cout << "Incorrect guess. You failed, and have been kicked out of the facility." << std::endl;
     }
     
     return 0;
