@@ -8,9 +8,9 @@ void PrintIntroduction() {
 bool PlayGame(int DifficultyLevel) {
     std::cout << "You are in room "<< DifficultyLevel << ".\n";
 
-    const int CodeA = 4;
-    const int CodeB = 2;
-    const int CodeC = 1;
+    const int CodeA = (rand() % DifficultyLevel) + DifficultyLevel;
+    const int CodeB = (rand() % DifficultyLevel) + DifficultyLevel;
+    const int CodeC = (rand() % DifficultyLevel) + DifficultyLevel;
 
     int GuessA, GuessB, GuessC;
     int GuessSum, GuessProduct;
@@ -20,7 +20,7 @@ bool PlayGame(int DifficultyLevel) {
 
     std::cout << "- The 3 secret code numbers add to: "<< CodeSum << std::endl;
     std::cout << "- They multiply together to be: " << CodeProduct << std::endl << std::endl;
-    std::cout << "What is your guess for the 3 codes?\n";
+    std::cout << "What is your guess for the secret codes?\n";
 
     std::cin >> GuessA;
     std::cin >> GuessB;
@@ -35,17 +35,19 @@ bool PlayGame(int DifficultyLevel) {
         std::cout << "Code for level " << DifficultyLevel  << " accepted. Access granted to next level.\n";
         return true;
     } else {
-        std::cout << "Incorrect guess. You failed, and have been kicked out of the facility.\n";
+        std::cout << "Incorrect guess. You failed, try again.\n";
         return false;
     }
 }
 
 int main() {
     PrintIntroduction();
-    bool bLevelComplete = true;
+
     int DifficultyLevel = 1;
-    while (true) {
-        bLevelComplete = PlayGame(DifficultyLevel);
+    const int MaximumLevelDifficulty = 5;
+
+    while (DifficultyLevel <= MaximumLevelDifficulty) {
+        bool bLevelComplete = PlayGame(DifficultyLevel);
         std::cin.clear();
         std::cin.ignore();
         if (bLevelComplete)
@@ -54,6 +56,6 @@ int main() {
         }
         
     }
-
+    std::cout << "Congratulations, you have been granted access to all secure facility tools and areas. Well done.\n";
     return 0;
 }
